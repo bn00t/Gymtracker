@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gymtracker</title>
+<meta name="description" content="Workouts, schema's en progressie bijhouden voor een vaste sportruimte.">
+<meta name="theme-color" content="#efeff1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0d0f" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🏋️</text></svg>">
+</head>
+<body>
+
+<div id="melding" class="melding" hidden role="status"></div>
+
+<!-- Aanmeldscherm -->
+<main id="aanmelden" class="aanmelden" hidden>
+  <div class="kaart">
+    <div class="kaart-body">
+      <h1>Gymtracker</h1>
+      <p class="sub">Workouts, schema en progressie voor je vaste sportruimte.</p>
+      <label>Je naam
+        <input id="gebruikersnaam" autocomplete="nickname" placeholder="Schrijf hier je naam"></label>
+      <div style="margin-top:1rem"><button class="knop primair" id="start-knop">Beginnen</button></div>
+      <div id="bestaande-gebruikers" class="chips" hidden></div>
+    </div>
+  </div>
+</main>
+
+<!-- Hoofdapp -->
+<div id="app" hidden>
+  <header class="balk">
+    <div class="balk-binnen">
+      <button class="icoon" id="timer-schakel" title="Starten">&#9654;</button>
+      <span class="timer" id="timer">00:00:00</span>
+      <button class="icoon stil" id="timer-nul" title="Op nul zetten" aria-label="Timer op nul">&#8635;</button>
+      <span class="rechts">
+        <span class="sub" id="huidige-gebruiker"></span>
+        <button class="icoon" id="thema-knop" title="Wissel thema" aria-label="Wissel thema">◐</button>
+      </span>
+    </div>
+  </header>
+
+  <main>
+    <section id="scherm-workout"      class="scherm"></section>
+    <section id="scherm-oefeningen"   class="scherm" hidden></section>
+    <section id="scherm-log"          class="scherm" hidden></section>
+    <section id="scherm-progressie"   class="scherm" hidden></section>
+    <section id="scherm-schema"       class="scherm" hidden></section>
+    <section id="scherm-instellingen" class="scherm" hidden></section>
+  </main>
+
+  <nav class="tabs">
+    <button class="tab actief" data-tab="workout"><span class="ikoon">🏋️</span>Workout</button>
+    <button class="tab" data-tab="oefeningen"><span class="ikoon">📚</span>Oefeningen</button>
+    <button class="tab" data-tab="log"><span class="ikoon">📋</span>Logboek</button>
+    <button class="tab" data-tab="progressie"><span class="ikoon">📈</span>Progressie</button>
+    <button class="tab" data-tab="schema"><span class="ikoon">🗂️</span>Schema</button>
+    <button class="tab" data-tab="instellingen"><span class="ikoon">⚙️</span>Instellingen</button>
+  </nav>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
